@@ -27,12 +27,18 @@ public class GameController : MonoBehaviour {
     private BasicObjectPool answerButtonPool;
     private List<GameObject> answerButtonObjects = new List<GameObject>();
 
+
+    void Awake()
+    {
+
+    }
+
     // Use this for initialization
     void Start() {
 
         dataController = FindObjectOfType<DataController>();
-        answerButtonPool = FindObjectOfType<BasicObjectPool>();
         roundData = dataController.GetCurrentRoundData();
+        answerButtonPool = FindObjectOfType<BasicObjectPool>();
         questionData = roundData.questions;
         ShowQuestions();
         playerScore = 0;

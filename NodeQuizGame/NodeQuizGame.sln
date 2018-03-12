@@ -1,7 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2015
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NodeQuizGame.CSharp", "NodeQuizGame.CSharp.csproj", "{148FAC09-BEA2-23EA-10C8-AF8849958E1D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NodeQuizGame", "NodeQuizGame.csproj", "{0B7BCFBC-2E7D-8733-A85D-8C10B41BD066}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NodeQuizGame.Editor", "NodeQuizGame.Editor.csproj", "{28C26FB2-E138-D900-F9B8-444F30247CFF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +11,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{148FAC09-BEA2-23EA-10C8-AF8849958E1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{148FAC09-BEA2-23EA-10C8-AF8849958E1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{148FAC09-BEA2-23EA-10C8-AF8849958E1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{148FAC09-BEA2-23EA-10C8-AF8849958E1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B7BCFBC-2E7D-8733-A85D-8C10B41BD066}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B7BCFBC-2E7D-8733-A85D-8C10B41BD066}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B7BCFBC-2E7D-8733-A85D-8C10B41BD066}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B7BCFBC-2E7D-8733-A85D-8C10B41BD066}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28C26FB2-E138-D900-F9B8-444F30247CFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28C26FB2-E138-D900-F9B8-444F30247CFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28C26FB2-E138-D900-F9B8-444F30247CFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28C26FB2-E138-D900-F9B8-444F30247CFF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
