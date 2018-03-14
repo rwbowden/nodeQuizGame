@@ -1,15 +1,28 @@
 <% include header %>
-<% if(movies.length){ %>
-	<% movies.forEach(function(movie){ %>
+<% if(newData.rounds.length){ %>
+	<% newData.rounds.forEach(function(movie, index){ %>
 	<div class="panel panel-default">
 		<div class="panel-heading">
 			<div class="text-muted pull-right">
-				<%= movie.timeLimitInSeconds %>
+				<%= "Time to Answer: " + movie.timeLimitInSeconds %>
+				<a href="new-entry?num=<%= index %>" class="btn btn-primary pull-right" style="margin-left:10px;height:20px;text-align: center; line-height: 7px;">Edit</a>
 			</div>
-			<%= movie.rank %>
+			<%= movie.name %>
 		</div>
 		<div class="panel-body">
-			<%= movie.name %>
+			<% movie.questions.forEach(function(question){ %>
+				<%= question.questionText %>
+				<ul>
+					<% question.answers.forEach(function(answer){ %>
+						<li>
+							<%= answer.answerText %>
+							<% if(answer.isCorrect) { %>
+								<div class = "text-muted pull-right"> &#10004</div>
+							<% } %>
+						</li>
+					<% }) %>
+				</ul>
+			<% }) %>
 		</div>
 	</div>
 	<% }) %>

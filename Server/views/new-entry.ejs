@@ -1,19 +1,58 @@
 <% include header %>
 
-<h2 style="color:rgb(18, 160, 196)">Add new movie.</h2>
+<h2 style="color:rgb(18, 160, 196)">Editing: 
+		<%= newData.rounds.name %>
+</h2>
 
-<form method="post" role="form" style="color:rgb(18, 160, 196)">
-	<div class="form-group">
-		<label for="rank">Rank of movie</label>
-		<input type="number" class="form-control" id="ranke" name="rank" placeholder="Enter rank of movie here" required>
+<div class="panel panel-default">
+		<div class="panel-heading">
+			<div class="text-muted pull-right">
+				<%= "Time to Answer: " + newData.rounds.timeLimitInSeconds %>
+				 
+			</div>
+			<%= newData.rounds.name %>
+		</div>
+		<div class="panel-body">
+			<form method="post" role="form" style="color:rgb(18, 160, 196)">
+			<% newData.rounds.questions.forEach(function(question){ %>
+						<div class="form-group">
+							<label for="question">Question Text</label>
+							<textarea class="form-control" id="question" name="question" rows="1"  style="margin-bottom: 10px" required><%= question.questionText%></textarea>
+
+							<label for="time">Time to Answer Question (In Seconds)</label>
+							<input type="number" class="form-control" id="time" name="time" placeholder="<%= newData.rounds.timeLimitInSeconds %>" style="width: 5%; min-width: 75px" required>
+						</div>
+
+					<% question.answers.forEach(function(answer, index){ %>
+
+						<div class="form-group">
+								<label for="name">Answer <%= index %></label>
+								
+								<% if(answer.isCorrect) { %>
+									<div class = "text-muted pull-right"> 
+										<input type="checkbox" name="isCorrect" id="isCorrect" style = "margin-right: 5px" checked>Is Correct<br>
+									</div>
+								<% } else {%>
+									<div class = "text-muted pull-right"> 
+										<input type="checkbox" name="isCorrect" id="isCorrect" style = "margin-right: 5px">Is Correct<br>
+									</div>
+								<% } %>
+
+								<textarea class="form-control" id="name" name="name" placeholder="<%= answer.answerText %>" rows="1" required></textarea>
+								
+						</div>
+							
+					<% }) %>
+
+					<hr style="height:2px;border:none;color:#333;background-color:#333;" noshade/>
+			<% }) %>
+				<div class="form-group">
+					<input type="submit" value="Save Changes" class="btn btn-primary"> 
+				</div>
+			</form>
+		</div>
 	</div>
-	<div class="form-group">
-		<label for="name">Name of game.</label>
-		<textarea class="form-control" id="name" name="name" placeholder="Add name of movie here" rows="1" required></textarea>
-	</div>
-	<div class="form-group">
-		<input type="submit" value="Post Movie" class="btn btn-primary"> 
-	</div>
-</form>
+
+
 
 <% include footer %>
