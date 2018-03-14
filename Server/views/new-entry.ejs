@@ -1,4 +1,6 @@
+
 <% include header %>
+
 
 <h2 style="color:rgb(18, 160, 196)">Editing: 
 		<%= newData.rounds.name %>
@@ -20,13 +22,13 @@
 							<textarea class="form-control" id="question" name="question" rows="1"  style="margin-bottom: 10px" required><%= question.questionText%></textarea>
 
 							<label for="time">Time to Answer Question (In Seconds)</label>
-							<input type="number" class="form-control" id="time" name="time" placeholder="<%= newData.rounds.timeLimitInSeconds %>" style="width: 5%; min-width: 75px" required>
+							<input type="number" class="form-control" id="time" name="time" value="<%= newData.rounds.timeLimitInSeconds %>" style="width: 5%; min-width: 75px" required>
 						</div>
 
 					<% question.answers.forEach(function(answer, index){ %>
 
 						<div class="form-group">
-								<label for="name">Answer <%= index %></label>
+								<label for="answer">Answer <%= index %></label>
 								
 								<% if(answer.isCorrect) { %>
 									<div class = "text-muted pull-right"> 
@@ -38,7 +40,7 @@
 									</div>
 								<% } %>
 
-								<textarea class="form-control" id="name" name="name" placeholder="<%= answer.answerText %>" rows="1" required></textarea>
+								<textarea class="form-control" id="answer" name="answer" rows="1" required><%= answer.answerText %></textarea>
 								
 						</div>
 							

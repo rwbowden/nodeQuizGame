@@ -6,6 +6,7 @@ var logger = require('morgan');
 var bodyParser = require('body-parser');
 var MongoClient = require('mongodb').MongoClient;
 var express = require('express');
+var util = require('util');
 var url = "mongodb://localhost:27017/";
 
 console.log("Server Started");
@@ -21,7 +22,7 @@ app.set('views', path.resolve(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use(logger("dev"));
-app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.urlencoded({extended:true}));
 
 MongoClient.connect(url, function(err, client){
     if(err) throw err;
@@ -68,18 +69,57 @@ app.post("/new-entry", function(request,response){
     dbObj.collection("playerData").findOne({}, {sort:{$natural:-1}})
     .then(function(data){
 
+        //console.log(data);
+
         var newData = {
             param : request.query.num,
-            rounds : data.allRounds[request.query.num]
+            rounds : data.allRounds[request.query.num],
+            name : data.allRounds[request.query.num].name
         }
         
+        //console.log("Old: " + JSON.stringify(newData.name));
+        
         for(var i = 0; i < newData.rounds.questions.length; i++){
-            console.log(newData.rounds.questions[i].questionText);
+
+            var question =  newData.rounds.questions[i];
+
+            if(i > 1)
+                var text = request.body.question[i];
+            else
+                var text = request.body.question;
+
+            newData.rounds.questions[i].questionText = text;
+            
+
+
+            for(var a = 0; a < question.answers.length; a++)
+            {
+                console.log(util.inspect(request.body.isCorrect[a]));
+                question.answers[a].answerText = request.body.answer[a];
+                if(request.body.isCorrect[a] == "n")
+                    question.answers[a].isCorrect = false;
+                else
+                    question.answers[a].isCorrect = true;
+                //question.answers[a].isCorrect = Boolean(request.body.isCorrect[a]);
+            }
+
+            //newData.rounds.questions[i].answers = request.body.answers;
         }
+
+                dbObj.collection("playerData").findOneAndUpdate(
+                {}, 
+                {"$set" : {"allRounds.$[elem]" : newData.rounds} },
+                {sort:{$natural:-1},
+                    arrayFilters: [{"elem.name": {$gte: newData.name}}]
+                }
+                ).then(function(data){
+                    console.log(data)
+                });
+        return data;
 
     });
 
-
+    //console.log(newData.param);
    
 
     response.redirect("/");
