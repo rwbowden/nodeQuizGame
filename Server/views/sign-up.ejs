@@ -1,0 +1,19 @@
+<% include header %>
+    <div class="form-group" style="color:rgb(18, 160, 196)">
+        <form name"signUpForm" action="sign-up" method="post" class"form-group">
+            
+        <% if(newData.isTaken) { %>
+            <div style="color:rgb(255, 0, 0)">Username already Taken</div>
+        <% } %>
+
+        <label for="Username" >Username</label>
+        <input name="username" placeholder="Username" class="form-control" width="200" required><br>
+        <label for="Password">Create Password</label>
+        <input name="password" placeholder="Create Password" class="form-control" type="password" width="200" required><br>
+        
+        <input type="submit" id="Sign Up" class="btn btn-primary" value="Sign Up">
+        <a href="sign-in" class="btn btn-primary pull-right" style="margin-left:10px">Already have an account? Click here to sign in!</a>
+        </form>
+    </div>
+
+<% include footer %>

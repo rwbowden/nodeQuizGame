@@ -1,60 +1,74 @@
-
 <% include header %>
 
 
-<h2 style="color:rgb(18, 160, 196)">Editing: 
+	<h2 style="color:rgb(18, 160, 196)">Editing:
 		<%= newData.rounds.name %>
-</h2>
+	</h2>
 
-<div class="panel panel-default">
+	<div class="panel panel-default">
 		<div class="panel-heading">
 			<div class="text-muted pull-right">
 				<%= "Time to Answer: " + newData.rounds.timeLimitInSeconds %>
-				 
+
 			</div>
 			<%= newData.rounds.name %>
 		</div>
 		<div class="panel-body">
 			<form method="post" role="form" style="color:rgb(18, 160, 196)">
-			<% newData.rounds.questions.forEach(function(question){ %>
-						<div class="form-group">
-							<label for="question">Question Text</label>
-							<textarea class="form-control" id="question" name="question" rows="1"  style="margin-bottom: 10px" required><%= question.questionText%></textarea>
+				<% newData.rounds.questions.forEach(function(question, index){ %>
+					<div class="form-group">
+						<% if(index == 0) {%>
+							<label for="time">Time to Answer Questions (In Seconds)</label>
+							<input type="number" class="form-control" id="time" name="time" value="<%= newData.rounds.timeLimitInSeconds %>" style="width: 5%; min-width: 75px"
+							 required> 
 
-							<label for="time">Time to Answer Question (In Seconds)</label>
-							<input type="number" class="form-control" id="time" name="time" value="<%= newData.rounds.timeLimitInSeconds %>" style="width: 5%; min-width: 75px" required>
-						</div>
+							 <label for="points">Points Added for Correct Answer</label>
+							 <input type="number" class="form-control" id="points" name="points" value="<%= newData.rounds.pointsAddedForCorrectAnswer %>" style="width: 5%; min-width: 75px"
+							  required>
+
+							 <hr style="height:2px;border:none;color:#333;background-color:#333;" noshade/>
+							<% } %>
+
+								<label for="question">Question Text</label>
+								<textarea class="form-control" id="question" name="question" rows="1" style="margin-bottom: 10px" required><%= question.questionText%></textarea>
+
+
+					</div>
 
 					<% question.answers.forEach(function(answer, index){ %>
 
 						<div class="form-group">
-								<label for="answer">Answer <%= index %></label>
-								
-								<% if(answer.isCorrect) { %>
-									<div class = "text-muted pull-right"> 
-										<input type="checkbox" name="isCorrect" id="isCorrect" style = "margin-right: 5px" checked>Is Correct<br>
-									</div>
+							<label for="answer">Answer
+								<%= index %>
+							</label>
+
+							<% if(answer.isCorrect) { %>
+								<div class="text-muted pull-right">
+									<input type="checkbox" name="isCorrect" value="<%= index %>" id="isCorrect" style="margin-right: 5px" checked>Is Correct
+									<br>
+								</div>
 								<% } else {%>
-									<div class = "text-muted pull-right"> 
-										<input type="checkbox" name="isCorrect" id="isCorrect" style = "margin-right: 5px">Is Correct<br>
+									<div class="text-muted pull-right">
+										<input type="checkbox" name="isCorrect" value="<%= index %>" id="isCorrect" style="margin-right: 5px">Is Correct
+										<br>
 									</div>
-								<% } %>
+									<% } %>
 
-								<textarea class="form-control" id="answer" name="answer" rows="1" required><%= answer.answerText %></textarea>
-								
+										<textarea class="form-control" id="answer" name="answer" rows="1" required><%= answer.answerText %></textarea>
+
 						</div>
-							
-					<% }) %>
 
-					<hr style="height:2px;border:none;color:#333;background-color:#333;" noshade/>
-			<% }) %>
-				<div class="form-group">
-					<input type="submit" value="Save Changes" class="btn btn-primary"> 
-				</div>
+						<% }) %>
+
+							<hr style="height:2px;border:none;color:#333;background-color:#333;" noshade/>
+							<% }) %>
+								<div class="form-group">
+									<input type="submit" value="Save Changes" class="btn btn-primary">
+								</div>
 			</form>
 		</div>
 	</div>
 
 
 
-<% include footer %>
+	<% include footer %>
