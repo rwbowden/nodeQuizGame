@@ -9,3 +9,5 @@ How to Open:
 cmd to nodeQuizGame\Server and call npm start to run the app
 You can then run the build and it will work off the database.
 If the app is not running it will run off a local save file that contains whatever the questions were the last time it was run with the app running
+
+(High scores will not show if running without the app running)
