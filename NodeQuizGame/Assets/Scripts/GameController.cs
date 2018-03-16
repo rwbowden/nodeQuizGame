@@ -124,7 +124,10 @@ public class GameController : MonoBehaviour {
 
             initialField.Select();
             questionDisplay.SetActive(false);
-            highScoreDisplay.SetActive(true);
+            if (dataController.socket.socket.IsConnected)
+                highScoreDisplay.SetActive(true);
+            else
+                endGameDisplay.SetActive(true);
         }
 
 
