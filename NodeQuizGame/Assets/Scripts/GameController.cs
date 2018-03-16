@@ -13,14 +13,19 @@ public class GameController : MonoBehaviour {
     public Text scoreText;
     public Text timeText;
 
+    public Text endScoreText;
+    public InputField initialField;
+
     public GameObject questionDisplay;
     public GameObject endGameDisplay;
+    public GameObject highScoreDisplay;
 
     private DataController dataController;
     private RoundData roundData;
     private QuestionData[] questionData;
     private bool isRoundActive;
     private int questionIndex = 0;
+    private int roundNum = 0;
 
     public Transform answersPanel;
 
@@ -37,7 +42,7 @@ public class GameController : MonoBehaviour {
     void Start() {
 
         dataController = FindObjectOfType<DataController>();
-        roundData = dataController.GetCurrentRoundData();
+        roundData = dataController.GetCurrentRoundData(roundNum);
         answerButtonPool = FindObjectOfType<BasicObjectPool>();
         questionData = roundData.questions;
         ShowQuestions();
@@ -56,7 +61,7 @@ public class GameController : MonoBehaviour {
     {
         RemoveAnswerButtons();
         QuestionData question = questionData[questionIndex];
-        questionText.text = question.questionText;
+        questionText.text = question.questionText.ToLower();
         for (int i = 0; i < question.answers.Length; i++)
         {
             GameObject answer = answerButtonPool.GetObject();
@@ -66,7 +71,15 @@ public class GameController : MonoBehaviour {
             answerButtonObjects.Add(answer);
 
             AnswerButton answerButton = answer.GetComponent<AnswerButton>();
-            answerButton.SetUp(question.answers[i]);
+            if(i == 0)
+            {
+                if (roundNum == 0)
+                    questionText.font = answerButton.star;
+                else
+                    questionText.font = answerButton.lord;
+            }
+                
+            answerButton.SetUp(question.answers[i], roundNum);
         }
 
     }
@@ -93,11 +106,27 @@ public class GameController : MonoBehaviour {
     }
 
     public void EndRound()
-    {
-        isRoundActive = false;
+    {   
+        if(roundNum < dataController.allRoundData.Length - 1)
+        {
+            roundNum++;
+            roundData = dataController.GetCurrentRoundData(roundNum);
+            questionIndex = 0;
+            questionData = roundData.questions;
+            ShowQuestions();
+            timer = roundData.timeLimitInSeconds;
+            isRoundActive = true;
+        }
+        else
+        {
+            isRoundActive = false;
+            endScoreText.text = ": " + playerScore;
 
-        questionDisplay.SetActive(false);
-        endGameDisplay.SetActive(true);
+            initialField.Select();
+            questionDisplay.SetActive(false);
+            highScoreDisplay.SetActive(true);
+        }
+
 
     }
 
@@ -127,6 +156,27 @@ public class GameController : MonoBehaviour {
             // End Game
             EndRound();
         }
+    }
+
+    public void SendScore(Text initials)
+    {
+        if (initials.text != "")
+            dataController.playerScore.initials = initials.text;
+        else
+            dataController.playerScore.initials = "AAA";
+
+        dataController.playerScore.score = playerScore;
+
+        string jsonObj = JsonUtility.ToJson(dataController.playerScore);
+
+        dataController.socket.Emit("send score", new JSONObject(jsonObj));
+
+        StartOver();
+    }
+
+    public void CapString()
+    {
+        initialField.text = initialField.text.ToUpper();
     }
 	
 }

@@ -17,7 +17,7 @@
 					<% question.answers.forEach(function(answer){ %>
 						<li>
 							<%= answer.answerText %>
-							<% if(answer.isCorrect) { %>
+							<% if(answer.isCorrect && newData.in) { %>
 								<div class = "text-muted pull-right"> &#10004</div>
 							<% } %>
 						</li>
@@ -27,9 +27,5 @@
 		</div>
 	</div>
 	<% }) %>
-	<% } else { %>
-	<div style="color:rgb(18, 160, 196)"> No Movies! 
-		<a href="/new-entry">Add a movie?</a>
-	</div> 
 	<% } %>
 <% include footer %>

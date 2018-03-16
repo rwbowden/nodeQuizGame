@@ -1,6 +1,5 @@
 var io = require('socket.io')(process.envPort||5000);
 var http = require('http');
-var shortid = require('shortid');
 var path = require('path');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
@@ -101,6 +100,18 @@ app.get("/", function(request,response){
 
                 response.render("index", {newData});
             });
+});
+
+app.get("/high-scores", function(request, response){
+    dbObj.collection("scores").find().sort({'score' : -1}).limit(10).toArray().then(function(data){
+
+        var newData = {
+            in : loggedIn,
+            scores : data
+        }
+
+        response.render("high-scores", {newData});
+    });
 });
 
 app.get("/new-entry", ensureAuthenticated,function(request,response){
@@ -258,7 +269,6 @@ http.createServer(app).listen(3000, function(){
 });
 
 io.on('connection', function(socket){
-    var thisPlayerId = shortid.generate();
     console.log("Connected");
 
     socket.on('Load', function()
@@ -270,8 +280,27 @@ io.on('connection', function(socket){
         console.log("Getting data");
         dbObj.collection("playerData").findOne({}, {sort:{$natural:-1}})
         .then(function(gameData){
-            socket.emit('loaded', gameData);
-            console.log(gameData);
+        
+        var newData = {
+                game : gameData,
+                score: null
+            }
+            
+        dbObj.collection("scores").find().sort({'score' : -1}).limit(10).toArray().then(function(data){
+                var dataObjs = JSON.stringify(data);
+                //socket.emit('scores', dataObjs);
+        
+                //console.log(dataObjs);
+
+                newData.score = data;
+            }).then(function(){
+                socket.emit('loaded', newData);
+                console.log(newData.score);
+            });
+
+            
+
+            
         });       
     });
 
@@ -283,4 +312,24 @@ io.on('connection', function(socket){
             console.log("data saved to MongoDB");
         });
     });
+
+    socket.on('send score', function(data){
+        dbObj.collection("scores").save(data, function(err, res){
+            if(err) throw err;
+            console.log("score save to MongoDB");
+        });
+    });
+
+    socket.on('get scores', function(){
+        console.log("Getting scores");
+        dbObj.collection("scores").find().sort({'score' : 1}).limit(10).toArray().then(function(data){
+
+            var dataObjs = JSON.stringify(data);
+            socket.emit('scores', dataObjs);
+        
+            console.log(dataObjs);
+
+        });       
+    });
+    
 });

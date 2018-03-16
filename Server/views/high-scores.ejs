@@ -1,0 +1,30 @@
+<% include header %>
+
+<div class="panel panel-default">
+        <div class="panel-heading">
+                High Scores
+                
+        </div>
+        <div class="panel-body">
+            
+            <% if(newData.scores.length){ %>
+                <% for(var i = 0; i < 10; i++) { %>
+                    <ul style ="list-style: none;">
+                        <li>
+                            <% if(i < newData.scores.length) { %>
+                                <%= (i + 1) + ": " + newData.scores[i].initials %>
+                                <div class = "text-muted pull-right"> <%= newData.scores[i].score %></div>
+                            <% } else { %>
+                                <%= (i + 1) + ": AAA" %>
+                                <div class = "text-muted pull-right">0</div>                                
+                            <% } %>
+                            
+                        </li>
+                    </ul> 
+                <% } %>
+            <% } %>         
+        </div>
+    </div>
+
+
+<% include footer %>

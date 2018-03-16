@@ -10,7 +10,10 @@ public class DataController : MonoBehaviour
 
     public RoundData[] allRoundData;
 
-    SocketIOComponent socket;
+    public HighScoreData[] highScoreData;
+    public HighScoreData playerScore;
+
+    public SocketIOComponent socket;
 
     string gameDataFilePath = "/StreamingAssets/data.json";
 
@@ -23,10 +26,12 @@ public class DataController : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         socket.socket.Connect();
 
-        if(socket.socket.IsConnected)
+        if (socket.socket.IsConnected)
+        {
             socket.On("loaded", OnLoad);
+        }
         else
-       {
+        {
             LoadFromFile();
         }
         SceneManager.LoadScene("MenuScreen");
@@ -47,12 +52,16 @@ public class DataController : MonoBehaviour
 
     private void OnLoad(SocketIOEvent e)
     {
-        GameData editorData = JsonUtility.FromJson<GameData>(e.data.ToString());
+
+        AllData allData = JsonUtility.FromJson<AllData>(e.data.ToString());
+        GameData editorData = allData.game;
+        highScoreData = allData.score.ToArray();
 
         SaveToFile(editorData);
 
-        print(e.data.ToString());
+        print(e.data);
         allRoundData = editorData.allRounds.ToArray();
+        
     }
 
     private void SaveToFile(GameData editorData)
@@ -64,10 +73,10 @@ public class DataController : MonoBehaviour
         File.WriteAllText(filePath, jsonObj);
     }
 
-    public RoundData GetCurrentRoundData()
+    public RoundData GetCurrentRoundData(int curRound)
     {
 
-        return allRoundData[0];
+        return allRoundData[curRound];
     }
 
 }

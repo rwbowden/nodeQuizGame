@@ -1,15 +1,4 @@
-Mono path[0] = 'S:/User/robbi_000/Documents/NEIT/Web API/nodeQuizGame/Build/test_Data/Managed'
-Mono path[1] = 'S:/User/robbi_000/Documents/NEIT/Web API/nodeQuizGame/Build/test_Data/Mono'
-Mono config path = 'S:/User/robbi_000/Documents/NEIT/Web API/nodeQuizGame/Build/test_Data/Mono/etc'
-PlayerConnection initialized from S:/User/robbi_000/Documents/NEIT/Web API/nodeQuizGame/Build/test_Data (debug = 0)
-PlayerConnection initialized network socket : 0.0.0.0 55384
-Multi-casting "[IP] 10.26.10.6 [Port] 55384 [Flags] 3 [Guid] 1940532387 [EditorId] 153767213 [Version] 1048832 [Id] WindowsPlayer(HOLOCRON) [Debug] 1" to [225.0.0.222:54997]...
-Waiting for connection from host on [0.0.0.0:55384]...
-PlayerConnection accepted from [169.254.179.105] handle:0x3a8
-Started listening to [0.0.0.0:55384]
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,defer=y,address=0.0.0.0:56387
-PlayerConnection already initialized - listening to [0.0.0.0:55384]
-Player data archive not found at `S:/User/robbi_000/Documents/NEIT/Web API/nodeQuizGame/Build/test_Data/data.unity3d`, using local filesystemInitialize engine version: 5.6.0f3 (497a0f351392)
+Initialize engine version: 5.6.0f3 (497a0f351392)
 GfxDevice: creating device client; threaded=1
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
@@ -28,7 +17,7 @@ Platform assembly: S:\User\robbi_000\Documents\NEIT\Web API\nodeQuizGame\Build\t
 Loading S:\User\robbi_000\Documents\NEIT\Web API\nodeQuizGame\Build\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: S:\User\robbi_000\Documents\NEIT\Web API\nodeQuizGame\Build\test_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
 Loading S:\User\robbi_000\Documents\NEIT\Web API\nodeQuizGame\Build\test_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-- Completed reload, in  0.157 seconds
+- Completed reload, in  0.141 seconds
 Platform assembly: S:\User\robbi_000\Documents\NEIT\Web API\nodeQuizGame\Build\test_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: S:\User\robbi_000\Documents\NEIT\Web API\nodeQuizGame\Build\test_Data\Managed\System.dll (this message is harmless)
 Platform assembly: S:\User\robbi_000\Documents\NEIT\Web API\nodeQuizGame\Build\test_Data\Managed\Mono.Security.dll (this message is harmless)
@@ -36,40 +25,86 @@ desktop: 1920x1080 60Hz; virtual: 3840x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 1.087489 ms
+UnloadTime: 1.081930 ms
+3/16/2018 12:51:58 AM|Error|WebSocket.connect|A WebSocket connection has already been established.
 Setting up 6 worker threads for Enlighten.
-  Thread -> id: 5e24 -> priority: 1 
-  Thread -> id: 2be4 -> priority: 1 
-  Thread -> id: 5a60 -> priority: 1 
-  Thread -> id: 2f70 -> priority: 1 
-  Thread -> id: 5acc -> priority: 1 
-  Thread -> id: 2010 -> priority: 1 
+  Thread -> id: 1574 -> priority: 1 
+  Thread -> id: 2ae4 -> priority: 1 
+  Thread -> id: 67e0 -> priority: 1 
+  Thread -> id: 33ec -> priority: 1 
+  Thread -> id: 378c -> priority: 1 
+  Thread -> id: 3aec -> priority: 1 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.289938 ms
-System memory in use before: 22.2 MB.
-System memory in use after: 22.3 MB.
+UnloadTime: 0.226743 ms
 
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 362.
-Total: 0.261559 ms (FindLiveObjects: 0.018432 ms CreateObjectMapping: 0.013458 ms MarkObjects: 0.218843 ms  DeleteObjects: 0.009362 ms)
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 371.
+Total: 0.299008 ms (FindLiveObjects: 0.017846 ms CreateObjectMapping: 0.013458 ms MarkObjects: 0.258340 ms  DeleteObjects: 0.008484 ms)
 
-{"_id":"5aa5950612c538423c0e055c","allRounds":[{"name":"Round Test","timeLimitInSeconds":30,"pointsAddedForCorrectAnswer":0,"questions":[{"questionText":"Questeion?","answers":[]}]}]}
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-UnityEngine.MonoBehaviour:print(Object)
-DataController:OnLoad(SocketIOEvent) (at S:\User\robbi_000\Documents\NEIT\Web API\nodeQuizGame\NodeQuizGame\Assets\Scripts\DataController.cs:54)
-SocketIO.SocketIOComponent:EmitEvent(SocketIOEvent) (at S:\User\robbi_000\Documents\NEIT\Web API\nodeQuizGame\NodeQuizGame\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:400)
-SocketIO.SocketIOComponent:Update() (at S:\User\robbi_000\Documents\NEIT\Web API\nodeQuizGame\NodeQuizGame\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:131)
+{"game":{"_id":"5aab47136ddd0629f0c2c16a","allRounds":[{"name":"Star Wars","timeLimitInSeconds":30,"pointsAddedForCorrectAnswer":10,"questions":[{"questionText":"In how many languages is C-3P0 fluent?","answers":[{"answerText":"4 Million","isCorrect":false},{"answerText":"6 Thousand","isCorrect":false},{"answerText":"Over 10 Million","isCorrect":false},{"answerText":"Over 6 Million","isCorrect":true}]},{"questionText":"What is the Wookiee's home world?","answers":[{"answerText":"Tatooine","isCorrect":false},{"answerText":"Kashyyyk","isCorrect":true},{"answerText":"Naboo","isCorrect":false},{"answerText":"Coruscant","isCorrect":false}]},{"questionText":"What does AT-AT stand for?","answers":[{"answerText":"Armored Tank Attack Transport","isCorrect":false},{"answerText":"Awesome Tall Attack Thing","isCorrect":false},{"answerText":"A Trasport Attack Thing","isCorrect":false},{"answerText":"All Terrain Armored Transport","isCorrect":true}]},{"questionText":"What is the name of Boba Fett's ship?","answers":[{"answerText":"Centennial Falcon","isCorrect":false},{"answerText":"Slave 1","isCorrect":true},{"answerText":"Slave 2","isCorrect":false},{"answerText":"Death Star","isCorrect":false}]},{"questionText":"Who was the original commander of the Death Star?","answers":[{"answerText":"Grand Moff Tarkin","isCorrect":true},{"answerText":"Darth Vader","isCorrect":false},{"answerText":"Sheev Palpatine","isCorrect":false},{"answerText":"Boba Fett","isCorrect":false}]}]},{"name":"Lord Of The Rings","timeLimitInSeconds":45,"pointsAddedForCorrectAnswer":20,"questions":[{"questionText":"Who possesses the ring of power at the start of the Lord Of The Rings?","answers":[{"answerText":"Frodo","isCorrect":false},{"answerText":"Bilbo","isCorrect":true},{"answerText":"Sauron","isCorrect":false},{"answerText":"Gandalf","isCorrect":false}]},{"questionText":"Who do the hobbits encounter at the Prancing Pony?","answers":[{"answerText":"Gandalf","isCorrect":false},{"answerText":"Legolas","isCorrect":false},{"answerText":"Strider","isCorrect":true},{"answerText":"Boromir","isCorrect":false}]},{"questionText":"How many members make up the fellowship of the ring?","answers":[{"answerText":"Ten","isCorrect":false},{"answerText":"Eight","isCorrect":false},{"answerText":"Nine","isCorrect":true},{"answerText":"Seven","isCorrect":false}]},{"questionText":"Who is the first member of the fellowship to be separated from the group?","answers":[{"answerText":"Legolas","isCorrect":false},{"answerText":"Boromir","isCorrect":false},{"answerText":"Aragorn","isCorrect":false},{"answerText":"Gandalf","isCorrect":true}]},{"questionText":"What is the name of the capital of Gondor?","answers":[{"answerText":"Osgiliath","isCorrect":false},{"answerText":"Helm's Deep","isCorrect":false},{"answerText":"Minas Tirith","isCorrect":true},{"answerText":"Cirith Ungol","isCorrect":false}]}]}]},"score":[]}
  
-(Filename: S:/User/robbi_000/Documents/NEIT/Web API/nodeQuizGame/NodeQuizGame/Assets/Scripts/DataController.cs Line: 54)
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 5.502107 ms
-System memory in use before: 22.4 MB.
-System memory in use after: 22.4 MB.
+UnloadTime: 4.322455 ms
 
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 411.
-Total: 0.322706 ms (FindLiveObjects: 0.021357 ms CreateObjectMapping: 0.013750 ms MarkObjects: 0.280869 ms  DeleteObjects: 0.005558 ms)
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 608.
+Total: 0.487424 ms (FindLiveObjects: 0.037156 ms CreateObjectMapping: 0.021065 ms MarkObjects: 0.422181 ms  DeleteObjects: 0.006144 ms)
 
-Waiting for finish
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.890588 ms
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 377.
+Total: 0.373321 ms (FindLiveObjects: 0.028672 ms CreateObjectMapping: 0.014043 ms MarkObjects: 0.308078 ms  DeleteObjects: 0.021650 ms)
+
+{"game":{"_id":"5aab47136ddd0629f0c2c16a","allRounds":[{"name":"Star Wars","timeLimitInSeconds":30,"pointsAddedForCorrectAnswer":10,"questions":[{"questionText":"In how many languages is C-3P0 fluent?","answers":[{"answerText":"4 Million","isCorrect":false},{"answerText":"6 Thousand","isCorrect":false},{"answerText":"Over 10 Million","isCorrect":false},{"answerText":"Over 6 Million","isCorrect":true}]},{"questionText":"What is the Wookiee's home world?","answers":[{"answerText":"Tatooine","isCorrect":false},{"answerText":"Kashyyyk","isCorrect":true},{"answerText":"Naboo","isCorrect":false},{"answerText":"Coruscant","isCorrect":false}]},{"questionText":"What does AT-AT stand for?","answers":[{"answerText":"Armored Tank Attack Transport","isCorrect":false},{"answerText":"Awesome Tall Attack Thing","isCorrect":false},{"answerText":"A Trasport Attack Thing","isCorrect":false},{"answerText":"All Terrain Armored Transport","isCorrect":true}]},{"questionText":"What is the name of Boba Fett's ship?","answers":[{"answerText":"Centennial Falcon","isCorrect":false},{"answerText":"Slave 1","isCorrect":true},{"answerText":"Slave 2","isCorrect":false},{"answerText":"Death Star","isCorrect":false}]},{"questionText":"Who was the original commander of the Death Star?","answers":[{"answerText":"Grand Moff Tarkin","isCorrect":true},{"answerText":"Darth Vader","isCorrect":false},{"answerText":"Sheev Palpatine","isCorrect":false},{"answerText":"Boba Fett","isCorrect":false}]}]},{"name":"Lord Of The Rings","timeLimitInSeconds":45,"pointsAddedForCorrectAnswer":20,"questions":[{"questionText":"Who possesses the ring of power at the start of the Lord Of The Rings?","answers":[{"answerText":"Frodo","isCorrect":false},{"answerText":"Bilbo","isCorrect":true},{"answerText":"Sauron","isCorrect":false},{"answerText":"Gandalf","isCorrect":false}]},{"questionText":"Who do the hobbits encounter at the Prancing Pony?","answers":[{"answerText":"Gandalf","isCorrect":false},{"answerText":"Legolas","isCorrect":false},{"answerText":"Strider","isCorrect":true},{"answerText":"Boromir","isCorrect":false}]},{"questionText":"How many members make up the fellowship of the ring?","answers":[{"answerText":"Ten","isCorrect":false},{"answerText":"Eight","isCorrect":false},{"answerText":"Nine","isCorrect":true},{"answerText":"Seven","isCorrect":false}]},{"questionText":"Who is the first member of the fellowship to be separated from the group?","answers":[{"answerText":"Legolas","isCorrect":false},{"answerText":"Boromir","isCorrect":false},{"answerText":"Aragorn","isCorrect":false},{"answerText":"Gandalf","isCorrect":true}]},{"questionText":"What is the name of the capital of Gondor?","answers":[{"answerText":"Osgiliath","isCorrect":false},{"answerText":"Helm's Deep","isCorrect":false},{"answerText":"Minas Tirith","isCorrect":true},{"answerText":"Cirith Ungol","isCorrect":false}]}]}]},"score":[{"_id":"5aab4d7a6ddd0629f0c2c16c","initials":"ADS","score":40}]}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.281454 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 609.
+Total: 0.492690 ms (FindLiveObjects: 0.046226 ms CreateObjectMapping: 0.029549 ms MarkObjects: 0.410478 ms  DeleteObjects: 0.005851 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.575196 ms
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 377.
+Total: 0.482158 ms (FindLiveObjects: 0.033353 ms CreateObjectMapping: 0.022820 ms MarkObjects: 0.392338 ms  DeleteObjects: 0.032768 ms)
+
+{"game":{"_id":"5aab47136ddd0629f0c2c16a","allRounds":[{"name":"Star Wars","timeLimitInSeconds":30,"pointsAddedForCorrectAnswer":10,"questions":[{"questionText":"In how many languages is C-3P0 fluent?","answers":[{"answerText":"4 Million","isCorrect":false},{"answerText":"6 Thousand","isCorrect":false},{"answerText":"Over 10 Million","isCorrect":false},{"answerText":"Over 6 Million","isCorrect":true}]},{"questionText":"What is the Wookiee's home world?","answers":[{"answerText":"Tatooine","isCorrect":false},{"answerText":"Kashyyyk","isCorrect":true},{"answerText":"Naboo","isCorrect":false},{"answerText":"Coruscant","isCorrect":false}]},{"questionText":"What does AT-AT stand for?","answers":[{"answerText":"Armored Tank Attack Transport","isCorrect":false},{"answerText":"Awesome Tall Attack Thing","isCorrect":false},{"answerText":"A Trasport Attack Thing","isCorrect":false},{"answerText":"All Terrain Armored Transport","isCorrect":true}]},{"questionText":"What is the name of Boba Fett's ship?","answers":[{"answerText":"Centennial Falcon","isCorrect":false},{"answerText":"Slave 1","isCorrect":true},{"answerText":"Slave 2","isCorrect":false},{"answerText":"Death Star","isCorrect":false}]},{"questionText":"Who was the original commander of the Death Star?","answers":[{"answerText":"Grand Moff Tarkin","isCorrect":true},{"answerText":"Darth Vader","isCorrect":false},{"answerText":"Sheev Palpatine","isCorrect":false},{"answerText":"Boba Fett","isCorrect":false}]}]},{"name":"Lord Of The Rings","timeLimitInSeconds":45,"pointsAddedForCorrectAnswer":20,"questions":[{"questionText":"Who possesses the ring of power at the start of the Lord Of The Rings?","answers":[{"answerText":"Frodo","isCorrect":false},{"answerText":"Bilbo","isCorrect":true},{"answerText":"Sauron","isCorrect":false},{"answerText":"Gandalf","isCorrect":false}]},{"questionText":"Who do the hobbits encounter at the Prancing Pony?","answers":[{"answerText":"Gandalf","isCorrect":false},{"answerText":"Legolas","isCorrect":false},{"answerText":"Strider","isCorrect":true},{"answerText":"Boromir","isCorrect":false}]},{"questionText":"How many members make up the fellowship of the ring?","answers":[{"answerText":"Ten","isCorrect":false},{"answerText":"Eight","isCorrect":false},{"answerText":"Nine","isCorrect":true},{"answerText":"Seven","isCorrect":false}]},{"questionText":"Who is the first member of the fellowship to be separated from the group?","answers":[{"answerText":"Legolas","isCorrect":false},{"answerText":"Boromir","isCorrect":false},{"answerText":"Aragorn","isCorrect":false},{"answerText":"Gandalf","isCorrect":true}]},{"questionText":"What is the name of the capital of Gondor?","answers":[{"answerText":"Osgiliath","isCorrect":false},{"answerText":"Helm's Deep","isCorrect":false},{"answerText":"Minas Tirith","isCorrect":true},{"answerText":"Cirith Ungol","isCorrect":false}]}]}]},"score":[{"_id":"5aab4d886ddd0629f0c2c16d","initials":"VVV","score":40},{"_id":"5aab4d7a6ddd0629f0c2c16c","initials":"ADS","score":40}]}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.283209 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 609.
+Total: 0.501760 ms (FindLiveObjects: 0.038326 ms CreateObjectMapping: 0.021942 ms MarkObjects: 0.435346 ms  DeleteObjects: 0.005266 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.508489 ms
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 377.
+Total: 0.496494 ms (FindLiveObjects: 0.038326 ms CreateObjectMapping: 0.022528 ms MarkObjects: 0.403456 ms  DeleteObjects: 0.031305 ms)
+
+{"game":{"_id":"5aab47136ddd0629f0c2c16a","allRounds":[{"name":"Star Wars","timeLimitInSeconds":30,"pointsAddedForCorrectAnswer":10,"questions":[{"questionText":"In how many languages is C-3P0 fluent?","answers":[{"answerText":"4 Million","isCorrect":false},{"answerText":"6 Thousand","isCorrect":false},{"answerText":"Over 10 Million","isCorrect":false},{"answerText":"Over 6 Million","isCorrect":true}]},{"questionText":"What is the Wookiee's home world?","answers":[{"answerText":"Tatooine","isCorrect":false},{"answerText":"Kashyyyk","isCorrect":true},{"answerText":"Naboo","isCorrect":false},{"answerText":"Coruscant","isCorrect":false}]},{"questionText":"What does AT-AT stand for?","answers":[{"answerText":"Armored Tank Attack Transport","isCorrect":false},{"answerText":"Awesome Tall Attack Thing","isCorrect":false},{"answerText":"A Trasport Attack Thing","isCorrect":false},{"answerText":"All Terrain Armored Transport","isCorrect":true}]},{"questionText":"What is the name of Boba Fett's ship?","answers":[{"answerText":"Centennial Falcon","isCorrect":false},{"answerText":"Slave 1","isCorrect":true},{"answerText":"Slave 2","isCorrect":false},{"answerText":"Death Star","isCorrect":false}]},{"questionText":"Who was the original commander of the Death Star?","answers":[{"answerText":"Grand Moff Tarkin","isCorrect":true},{"answerText":"Darth Vader","isCorrect":false},{"answerText":"Sheev Palpatine","isCorrect":false},{"answerText":"Boba Fett","isCorrect":false}]}]},{"name":"Lord Of The Rings","timeLimitInSeconds":45,"pointsAddedForCorrectAnswer":20,"questions":[{"questionText":"Who possesses the ring of power at the start of the Lord Of The Rings?","answers":[{"answerText":"Frodo","isCorrect":false},{"answerText":"Bilbo","isCorrect":true},{"answerText":"Sauron","isCorrect":false},{"answerText":"Gandalf","isCorrect":false}]},{"questionText":"Who do the hobbits encounter at the Prancing Pony?","answers":[{"answerText":"Gandalf","isCorrect":false},{"answerText":"Legolas","isCorrect":false},{"answerText":"Strider","isCorrect":true},{"answerText":"Boromir","isCorrect":false}]},{"questionText":"How many members make up the fellowship of the ring?","answers":[{"answerText":"Ten","isCorrect":false},{"answerText":"Eight","isCorrect":false},{"answerText":"Nine","isCorrect":true},{"answerText":"Seven","isCorrect":false}]},{"questionText":"Who is the first member of the fellowship to be separated from the group?","answers":[{"answerText":"Legolas","isCorrect":false},{"answerText":"Boromir","isCorrect":false},{"answerText":"Aragorn","isCorrect":false},{"answerText":"Gandalf","isCorrect":true}]},{"questionText":"What is the name of the capital of Gondor?","answers":[{"answerText":"Osgiliath","isCorrect":false},{"answerText":"Helm's Deep","isCorrect":false},{"answerText":"Minas Tirith","isCorrect":true},{"answerText":"Cirith Ungol","isCorrect":false}]}]}]},"score":[{"_id":"5aab4d926ddd0629f0c2c16e","initials":"ADS","score":40},{"_id":"5aab4d886ddd0629f0c2c16d","initials":"VVV","score":40},{"_id":"5aab4d7a6ddd0629f0c2c16c","initials":"ADS","score":40}]}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.342894 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 609.
+Total: 0.452023 ms (FindLiveObjects: 0.027209 ms CreateObjectMapping: 0.021065 ms MarkObjects: 0.397312 ms  DeleteObjects: 0.005851 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.509952 ms
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 377.
+Total: 0.365714 ms (FindLiveObjects: 0.022820 ms CreateObjectMapping: 0.014043 ms MarkObjects: 0.307785 ms  DeleteObjects: 0.020772 ms)
+
+{"game":{"_id":"5aab47136ddd0629f0c2c16a","allRounds":[{"name":"Star Wars","timeLimitInSeconds":30,"pointsAddedForCorrectAnswer":10,"questions":[{"questionText":"In how many languages is C-3P0 fluent?","answers":[{"answerText":"4 Million","isCorrect":false},{"answerText":"6 Thousand","isCorrect":false},{"answerText":"Over 10 Million","isCorrect":false},{"answerText":"Over 6 Million","isCorrect":true}]},{"questionText":"What is the Wookiee's home world?","answers":[{"answerText":"Tatooine","isCorrect":false},{"answerText":"Kashyyyk","isCorrect":true},{"answerText":"Naboo","isCorrect":false},{"answerText":"Coruscant","isCorrect":false}]},{"questionText":"What does AT-AT stand for?","answers":[{"answerText":"Armored Tank Attack Transport","isCorrect":false},{"answerText":"Awesome Tall Attack Thing","isCorrect":false},{"answerText":"A Trasport Attack Thing","isCorrect":false},{"answerText":"All Terrain Armored Transport","isCorrect":true}]},{"questionText":"What is the name of Boba Fett's ship?","answers":[{"answerText":"Centennial Falcon","isCorrect":false},{"answerText":"Slave 1","isCorrect":true},{"answerText":"Slave 2","isCorrect":false},{"answerText":"Death Star","isCorrect":false}]},{"questionText":"Who was the original commander of the Death Star?","answers":[{"answerText":"Grand Moff Tarkin","isCorrect":true},{"answerText":"Darth Vader","isCorrect":false},{"answerText":"Sheev Palpatine","isCorrect":false},{"answerText":"Boba Fett","isCorrect":false}]}]},{"name":"Lord Of The Rings","timeLimitInSeconds":45,"pointsAddedForCorrectAnswer":20,"questions":[{"questionText":"Who possesses the ring of power at the start of the Lord Of The Rings?","answers":[{"answerText":"Frodo","isCorrect":false},{"answerText":"Bilbo","isCorrect":true},{"answerText":"Sauron","isCorrect":false},{"answerText":"Gandalf","isCorrect":false}]},{"questionText":"Who do the hobbits encounter at the Prancing Pony?","answers":[{"answerText":"Gandalf","isCorrect":false},{"answerText":"Legolas","isCorrect":false},{"answerText":"Strider","isCorrect":true},{"answerText":"Boromir","isCorrect":false}]},{"questionText":"How many members make up the fellowship of the ring?","answers":[{"answerText":"Ten","isCorrect":false},{"answerText":"Eight","isCorrect":false},{"answerText":"Nine","isCorrect":true},{"answerText":"Seven","isCorrect":false}]},{"questionText":"Who is the first member of the fellowship to be separated from the group?","answers":[{"answerText":"Legolas","isCorrect":false},{"answerText":"Boromir","isCorrect":false},{"answerText":"Aragorn","isCorrect":false},{"answerText":"Gandalf","isCorrect":true}]},{"questionText":"What is the name of the capital of Gondor?","answers":[{"answerText":"Osgiliath","isCorrect":false},{"answerText":"Helm's Deep","isCorrect":false},{"answerText":"Minas Tirith","isCorrect":true},{"answerText":"Cirith Ungol","isCorrect":false}]}]}]},"score":[{"_id":"5aab4d926ddd0629f0c2c16e","initials":"ADS","score":40},{"_id":"5aab4d976ddd0629f0c2c16f","initials":"AAA","score":40},{"_id":"5aab4d886ddd0629f0c2c16d","initials":"VVV","score":40},{"_id":"5aab4d7a6ddd0629f0c2c16c","initials":"ADS","score":40}]}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
